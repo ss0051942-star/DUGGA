@@ -29,7 +29,7 @@ body {
    background-attachment: fixed iOS Safari te kaj kore na,
    tai alada fixed layer use kora hoyeche */
 :root {
-    --bg-image: url("image/imgbaground.PNG");
+    --bg-image: url("imgbaground.PNG");
 }
 
 body::before {
