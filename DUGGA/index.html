@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>শারদীয়া | Durga Puja Music</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg-glow glow1"></div>
+    <div class="bg-glow glow2"></div>
+
+    <!-- Floating flowers -->
+    <div class="flower flower1">🌸</div>
+    <div class="flower flower2">🌺</div>
+    <div class="flower flower3">🌼</div>
+
+    <!-- MUSIC START POPUP -->
+    <div class="music-start-overlay" id="musicStartOverlay" role="dialog" aria-modal="true" aria-labelledby="musicStartTitle">
+        <div class="music-start-popup">
+            <div class="music-start-icon">🪷</div>
+            <h2 id="musicStartTitle">পুজোর গান শুনবেন?</h2>
+            <p>🪷 সুরের ছোঁয়ায় সুন্দর করে তুলুন আপনার শারদীয়ার মুহূর্তগুলি।</p>
+            <div class="music-start-actions">
+                <button type="button" class="music-start-yes" id="musicStartYes">▶ Yes, গান চালান</button>
+                <button type="button" class="music-start-no" id="musicStartNo">না, পরে শুনব</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>🪔</span>
+            <div>
+                <h2>শুভ শারদীয়া</h2>
+                <small>MADE BY SUBRATA</small>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#calendar">Calendar</a>
+            <a href="#songs">Songs</a>
+        </div>
+
+        <div class="nav-actions">
+            <span class="qr-label" id="qrLabel" role="button" tabindex="0">Scan QR</span>
+            <button type="button" class="qr-icon-btn" id="qrOpenBtn" title="QR Code" aria-label="QR Code দেখুন">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm8-2h2v2h-2v-2zm2 2h2v2h-2v-2zm2-2h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 0h4v2h-4v-2zm-2 2h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>
+            </button>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#calendar">Calendar</a>
+        <a href="#songs">Songs</a>
+    </div>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✨ শুভ শারদীয়া ✨
+            </div>
+
+            <h1>
+                মা আসছেন...
+                <br>
+                <span>শারদীয়া ১৪৩৩</span>
+            </h1>
+
+            <p>
+                ঢাকের তালে, কাশফুলের দোলে
+                <br>
+                মাতুক মন পুজোর আনন্দে।
+            </p>
+
+            <a href="#songs" class="main-btn">
+                🎵 গান শুনুন
+            </a>
+
+        </div>
+
+       <div class="hero-art">
+
+            <div class="sun"></div>
+
+            <div class="durga-symbol">
+                
+            </div>
+
+            <div class="floating-lamp">
+                
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TODAY -->
+    <section class="today-section">
+
+        <div class="today-card">
+
+            <div class="today-icon">
+                🌸
+            </div>
+
+            <div>
+                <span class="today-label">আজ</span>
+
+                <h2 id="todayDate">
+                    Loading...
+                </h2>
+
+                <p id="todayTithi">
+                    তিথি গণনা হচ্ছে...
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENGALI CALENDAR -->
+    <section class="calendar-section" id="calendar">
+
+        <div class="section-heading">
+
+            <span>📅</span>
+
+            <div>
+                <h2>বাংলা ক্যালেন্ডার</h2>
+                <p>শারদীয়ার দিনগুলি</p>
+            </div>
+
+        </div>
+
+
+        <div class="calendar-card">
+
+            <div class="calendar-header">
+
+                <button onclick="previousMonth()" class="calendar-btn">
+                    ‹
+                </button>
+
+                <div>
+                    <h2 id="monthName">আশ্বিন ১৪৩৩</h2>
+                    <p id="englishMonth">September 2026</p>
+                </div>
+
+                <button onclick="nextMonth()" class="calendar-btn">
+                    ›
+                </button>
+
+            </div>
+
+
+            <div class="weekdays">
+
+                <div>রবি</div>
+                <div>সোম</div>
+                <div>মঙ্গল</div>
+                <div>বুধ</div>
+                <div>বৃহঃ</div>
+                <div>শুক্র</div>
+                <div>শনি</div>
+
+            </div>
+
+
+            <div class="calendar-grid" id="calendarGrid"></div>
+
+
+            <div class="calendar-legend">
+
+                <div>
+                    <span class="legend-today"></span>
+                    আজ
+                </div>
+
+                <div>
+                    <span class="legend-puja"></span>
+                    পূজার দিন
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SONGS -->
+    <section class="songs-section" id="songs">
+
+        <div class="section-heading">
+
+            <span>🎵</span>
+
+            <div>
+                <h2>পুজোর গান</h2>
+                <p>শুনুন আপনার পছন্দের গান</p>
+            </div>
+
+        </div>
+
+
+        <div class="songs-container" id="songList">
+
+            <!-- Songs generated by JS -->
+
+        </div>
+
+    </section>
+
+
+    <!-- PUJA INFO -->
+    <section class="puja-info">
+
+        <div class="info-card">
+
+            <span>🌺</span>
+
+            <h3>শুভ মহাষষ্ঠী</h3>
+
+            <p>
+                মায়ের বোধনের সঙ্গে শুরু হোক
+                আনন্দ ও উৎসবের দিনগুলি।
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>🔱</span>
+
+            <h3>শুভ মহাসপ্তমী</h3>
+
+            <p>
+                নবপত্রিকার স্নানে মায়ের
+                আরাধনায় মেতে উঠুক সবাই।
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>🌸</span>
+
+            <h3>মহাষ্টমী</h3>
+
+            <p>
+                অঞ্জলির ফুলে ভরে উঠুক
+                সবার মন।
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>🪔</span>
+
+            <h3>বিজয়া দশমী</h3>
+
+            <p>
+                আসছে বছর আবার হবে।
+                শুভ বিজয়া।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            🪔 শারদীয়া
+        </div>
+
+        <p>
+            শুভ শারদীয়া • শুভ বিজয়া
+        </p>
+
+        <small>
+            Made with ❤️ for Durga Puja
+        </small>
+
+
+
+        
+        <p>
+            Disclaimer: Audio plays through YouTube’s embedded player.
+        </p>
+        </p>
+
+            Nothing is hosted on this site, and all rights stay with the labels, composers and performers.
+        </p>
+        </p>
+
+            Song credits are put together from film soundtrack listings.
+        </p>
+
+    </footer>
+
+
+    <!-- FLOATING MUSIC PLAYER -->
+
+    <div class="music-player">
+
+        <div class="music-info">
+
+            <div class="album-art" id="albumArt">
+                🪔
+            </div>
+
+            <div class="track-details">
+
+                <h4 id="currentSong">
+                    কোনো গান চলছে না
+                </h4>
+
+                <span id="currentArtist">
+                    Durga Puja
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-controls">
+
+            <button onclick="previousSong()" title="Previous">
+                ⏮
+            </button>
+
+            <button class="play-button"
+                    onclick="togglePlay()"
+                    id="playBtn"
+                    title="Play">
+                ▶
+            </button>
+
+            <button onclick="nextSong()" title="Next">
+                ⏭
+            </button>
+
+        </div>
+
+
+        <div class="progress-area">
+
+            <span id="currentTime">0:00</span>
+
+            <input
+                type="range"
+                id="progressBar"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="duration">0:00</span>
+
+        </div>
+
+
+        <div class="player-extra">
+
+            <button onclick="toggleMute()" id="volumeBtn">
+                🔊
+            </button>
+
+            <input
+                type="range"
+                id="volumeBar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.8"
+            >
+
+            <button onclick="toggleRepeat()" id="repeatBtn">
+                🔁
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- QR POPUP -->
+    <div class="qr-overlay" id="qrOverlay" role="dialog" aria-modal="true" aria-label="QR Code">
+        <div class="qr-popup">
+            <button type="button" class="qr-close" id="qrCloseBtn" aria-label="বন্ধ করুন">✕</button>
+            <img src="image/subuqr.jpeg" alt="Subrata QR Code">
+            <p>😋 ফুচকা খাওয়ার জন্য কিছু ...</p>
+        </div>
+    </div>
+
+
+    <!-- AUDIO -->
+    <audio id="audio"></audio>
+
+    <!-- Hidden YouTube player: video is not shown; only audio is used -->
+    <div id="youtube-player-host" aria-hidden="true"></div>
+
+    <!-- YouTube IFrame Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Astronomy Engine (open source, MIT): accurate Sun/Moon data for the tithi -->
+    <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2/astronomy.browser.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
